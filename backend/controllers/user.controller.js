@@ -229,7 +229,7 @@ export const editProfile = asyncHandler(async (req, res) => {
 export const getSuggestedUser = asyncHandler(async (req, res) => {
   try {
     const suggestedUser = await User.find({
-      _id: { $ne: req.user._id },
+      followers: { $ne: req.user._id },
     })
       .select("-password -refreshToken")
       .limit(10);
