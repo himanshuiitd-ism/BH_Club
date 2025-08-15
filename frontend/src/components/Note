@@ -1,0 +1,62 @@
+<!-- There is a error I need to solve in communities ,that if a new community is formed ,other user have to logout and relogin to see that community -->
+
+<!-- These all are css I updated -->
+
+<!-- /* ADD THESE STYLES TO YOUR EXISTING community.css or communities.css FILE */
+
+/* Message bubble modifications to accommodate reactions */
+.community-message-bubble {
+  /* existing styles remain same */
+  padding-bottom: 8px; /* Add extra padding for reactions */
+}
+
+/* Message content spacing adjustment */
+.message-content {
+  /* existing styles remain same */
+  margin-bottom: 4px; /* Add small margin for reactions */
+}
+
+/* Ensure message wrapper has enough space */
+.message-wrapper {
+  /* existing styles remain same */
+  margin-bottom: 12px; /* Increase margin for reactions */
+}
+
+/* Optional: Style for message with reactions */
+.message-wrapper.has-reactions {
+  margin-bottom: 16px; /* Extra margin for messages with reactions */
+}
+
+/* Style adjustments for own messages vs others */
+.own-message-wrapper .message-reactions-container {
+  align-items: flex-end; /* Align reactions to right for own messages */
+}
+
+.other-message-wrapper .message-reactions-container {
+  align-items: flex-start; /* Align reactions to left for other messages */
+}
+
+/* Ensure reactions don't interfere with message options menu */
+.message-options-menu {
+  z-index: 1001; /* Higher than emoji selector */
+}
+
+/* Style for message hover state with reactions */
+.community-message-bubble:hover .message-reactions-container {
+  opacity: 1; /* Make reactions more visible on hover */
+}
+
+/* Loading state for reactions */
+.message-reactions-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #65676b;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.message-reactions-loading::after {
+  content: "...";
+  animation: loadingDots 1.5s infinite;
+} -->
