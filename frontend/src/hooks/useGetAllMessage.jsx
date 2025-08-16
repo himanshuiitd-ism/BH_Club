@@ -11,7 +11,7 @@ const useGetAllMessage = () => {
     const fetchAllMessage = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8001/api/v1/message/all/${selectedUser?._id}`,
+          `https://bh-club.onrender.com/api/v1/message/all/${selectedUser?._id}`,
           { withCredentials: true }
         );
 

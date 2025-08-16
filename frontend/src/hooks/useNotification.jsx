@@ -12,7 +12,7 @@ const useGetUnreadCount = () => {
       if (user) {
         try {
           const res = await axios.get(
-            "http://localhost:8001/api/v1/notifications",
+            "https://bh-club.onrender.com/api/v1/notifications",
             { withCredentials: true }
           );
           if (res.data.success) {

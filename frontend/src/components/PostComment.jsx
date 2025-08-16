@@ -28,7 +28,7 @@ const PostComment = forwardRef(({ postComment }, ref) => {
     }
     try {
       const res = await axios.post(
-        `http://localhost:8001/api/v1/post/posts/${selectedPost._id}/comments`,
+        `https://bh-club.onrender.com/api/v1/post/posts/${selectedPost._id}/comments`,
         { text: comment },
         { withCredentials: true }
       );

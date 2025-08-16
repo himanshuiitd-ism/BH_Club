@@ -219,7 +219,7 @@ const Communities = () => {
   const fetchUnseenCount = useCallback(async (communityId) => {
     try {
       const res = await axios.get(
-        `http://localhost:8001/api/v1/communities/${communityId}/unseenCount`,
+        `https://bh-club.onrender.com/api/v1/communities/${communityId}/unseenCount`,
         { withCredentials: true }
       );
       return res.data.data.unseenCount; //ye useCallback ka use kea hai iseleye kuch to return krna hoga
@@ -249,7 +249,7 @@ const Communities = () => {
   const markMessageAsSeen = useCallback(async (communityId) => {
     try {
       await axios.patch(
-        `http://localhost:8001/api/v1/communities/${communityId}/markAsSeen`,
+        `https://bh-club.onrender.com/api/v1/communities/${communityId}/markAsSeen`,
         {}, //kuch body se nahi bhejna hai na
         { withCredentials: true }
       );
@@ -374,7 +374,7 @@ const Communities = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8001/api/v1/communities/${selectedCommunity?._id}/sendMessage`,
+        `https://bh-club.onrender.com/api/v1/communities/${selectedCommunity?._id}/sendMessage`,
         {
           sender: user,
           content: textMsg,
@@ -412,7 +412,7 @@ const Communities = () => {
 
       try {
         const res = await axios.delete(
-          `http://localhost:8001/api/v1/communities/${messageId}/delete`,
+          `https://bh-club.onrender.com/api/v1/communities/${messageId}/delete`,
           { withCredentials: true }
         );
 
@@ -442,7 +442,7 @@ const Communities = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:8001/api/v1/communities/${messageId}/report`,
+        `https://bh-club.onrender.com/api/v1/communities/${messageId}/report`,
         { reason: reason },
         { withCredentials: true }
       );
@@ -513,7 +513,7 @@ const Communities = () => {
       try {
         const commDetails = user.communities.map((id) =>
           axios.get(
-            `http://localhost:8001/api/v1/communities/${id}/community`,
+            `https://bh-club.onrender.com/api/v1/communities/${id}/community`,
             { withCredentials: true }
           )
         );
@@ -553,7 +553,7 @@ const Communities = () => {
       setMessagesLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:8001/api/v1/communities/${selectedCommunity?._id}/messages`,
+          `https://bh-club.onrender.com/api/v1/communities/${selectedCommunity?._id}/messages`,
           { withCredentials: true }
         );
 

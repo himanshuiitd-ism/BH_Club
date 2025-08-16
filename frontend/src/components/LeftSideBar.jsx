@@ -52,7 +52,7 @@ const LeftSideBar = () => {
   const markAllUnreadAsRead = async () => {
     try {
       await axios.patch(
-        "http://localhost:8001/api/v1/notifications/mark-all-read",
+        "https://bh-club.onrender.com/api/v1/notifications/mark-all-read",
         {},
         { withCredentials: true }
       );
@@ -94,7 +94,7 @@ const LeftSideBar = () => {
   const logoutHandler = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:8001/api/v1/user/logout",
+        "https://bh-club.onrender.com/api/v1/user/logout",
         {},
         {
           withCredentials: true,

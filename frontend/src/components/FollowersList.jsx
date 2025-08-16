@@ -23,9 +23,12 @@ const FollowerList = ({ setFollowerList, selectedUser, setSelectedUser }) => {
       setLoading(true);
       try {
         const userDetailsPromise = user.following.map((userId) =>
-          axios.get(`http://localhost:8001/api/v1/user/${userId}/profile`, {
-            withCredentials: true,
-          })
+          axios.get(
+            `https://bh-club.onrender.com/api/v1/user/${userId}/profile`,
+            {
+              withCredentials: true,
+            }
+          )
         );
 
         // Use allSettled to handle individual failures gracefully

@@ -9,7 +9,7 @@ const useGetSuggestedUser = () => {
     const fetchSuggestedUser = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8001/api/v1/user/suggested",
+          "https://bh-club.onrender.com/api/v1/user/suggested",
           {
             withCredentials: true,
           }

@@ -8,9 +8,12 @@ const useGetAllPost = () => {
   useEffect(() => {
     const fetchAllPost = async () => {
       try {
-        const res = await axios.get("http://localhost:8001/api/v1/post/posts", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://bh-club.onrender.com/api/v1/post/posts",
+          {
+            withCredentials: true,
+          }
+        );
         if (res.data.success) {
           dispatch(setPosts(res.data.data));
         }

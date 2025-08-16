@@ -25,7 +25,7 @@ const SignUp = () => {
       setLoading(true);
       //for api call
       const res = await axios.post(
-        "http://localhost:8001/api/v1/user/register",
+        "https://bh-club.onrender.com/api/v1/user/register",
         input, //this is data
         {
           headers: {

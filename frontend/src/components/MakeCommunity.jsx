@@ -45,7 +45,7 @@ const MakeCommunity = ({ makeCommunity, setMakeCommunity }) => {
       });
 
       const res = await axios.post(
-        `http://localhost:8001/api/v1/communities/makeCommunity`,
+        `https://bh-club.onrender.com/api/v1/communities/makeCommunity`,
         {
           name: commDetails.name,
           members: updatedSetOfUsers,

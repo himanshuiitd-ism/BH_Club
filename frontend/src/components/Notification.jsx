@@ -24,7 +24,7 @@ const NotificationBox = ({
     const fetchNotifications = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8001/api/v1/notifications",
+          "https://bh-club.onrender.com/api/v1/notifications",
           { withCredentials: true }
         );
         if (response.data.success) {
@@ -47,7 +47,7 @@ const NotificationBox = ({
   const markNotificationsAsSeen = async () => {
     try {
       await axios.patch(
-        "http://localhost:8001/api/v1/notifications/mark-seen",
+        "https://bh-club.onrender.com/api/v1/notifications/mark-seen",
         {},
         { withCredentials: true }
       );
@@ -65,7 +65,7 @@ const NotificationBox = ({
   const markAsRead = async (notificationId) => {
     try {
       await axios.patch(
-        `http://localhost:8001/api/v1/notifications/${notificationId}/mark-read`,
+        `https://bh-club.onrender.com/api/v1/notifications/${notificationId}/mark-read`,
         {},
         { withCredentials: true }
       );
@@ -84,7 +84,7 @@ const NotificationBox = ({
   const deleteNotification = async (notificationId) => {
     try {
       await axios.delete(
-        `http://localhost:8001/api/v1/notifications/${notificationId}`,
+        `https://bh-club.onrender.com/api/v1/notifications/${notificationId}`,
         { withCredentials: true }
       );
 

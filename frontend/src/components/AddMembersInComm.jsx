@@ -18,7 +18,7 @@ const AddMembersInComm = ({ setAddMem, selectedCommunity }) => {
     const communityUsers = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8001/api/v1/communities/${selectedCommunity?._id}/community`,
+          `https://bh-club.onrender.com/api/v1/communities/${selectedCommunity?._id}/community`,
           { withCredentials: true }
         );
 
@@ -43,9 +43,12 @@ const AddMembersInComm = ({ setAddMem, selectedCommunity }) => {
       setLoading(true);
       try {
         const userDetailsPromise = user.following.map((userId) =>
-          axios.get(`http://localhost:8001/api/v1/user/${userId}/profile`, {
-            withCredentials: true,
-          })
+          axios.get(
+            `https://bh-club.onrender.com/api/v1/user/${userId}/profile`,
+            {
+              withCredentials: true,
+            }
+          )
         );
 
         const responses = await Promise.allSettled(userDetailsPromise);
@@ -111,7 +114,7 @@ const AddMembersInComm = ({ setAddMem, selectedCommunity }) => {
   const addMembers = async () => {
     try {
       const res = await axios.patch(
-        `http://localhost:8001/api/v1/communities/${selectedCommunity?._id}/addMembers`,
+        `https://bh-club.onrender.com/api/v1/communities/${selectedCommunity?._id}/addMembers`,
         { members: selectedUser },
         { withCredentials: true }
       );

@@ -54,7 +54,7 @@ const Post = ({ post }) => {
     try {
       setDeleting(true);
       const res = await axios.delete(
-        `http://localhost:8001/api/v1/post/posts/${post._id}/deletepost`,
+        `https://bh-club.onrender.com/api/v1/post/posts/${post._id}/deletepost`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -109,7 +109,7 @@ const Post = ({ post }) => {
 
       // Make API call
       const res = await axios.post(
-        `http://localhost:8001/api/v1/post/posts/${post._id}/like`,
+        `https://bh-club.onrender.com/api/v1/post/posts/${post._id}/like`,
         {},
         { withCredentials: true }
       );
@@ -171,7 +171,7 @@ const Post = ({ post }) => {
     }
     try {
       const res = await axios.post(
-        `http://localhost:8001/api/v1/post/posts/${post._id}/comments`,
+        `https://bh-club.onrender.com/api/v1/post/posts/${post._id}/comments`,
         { text: postComment },
         { withCredentials: true }
       );
@@ -210,7 +210,7 @@ const Post = ({ post }) => {
     const isFollowed = user?.following?.includes(userId) || false;
     try {
       const res = await axios.post(
-        `http://localhost:8001/api/v1/user/followOrUnfollow/${userId}`,
+        `https://bh-club.onrender.com/api/v1/user/followOrUnfollow/${userId}`,
         {},
         { withCredentials: true }
       );
@@ -246,7 +246,7 @@ const Post = ({ post }) => {
 
     try {
       const res = await axios.get(
-        `http://localhost:8001/api/v1/post/posts/${post._id}/bookmarkpost`,
+        `https://bh-club.onrender.com/api/v1/post/posts/${post._id}/bookmarkpost`,
         { withCredentials: true } // ✅ Correct: config as second parameter
       );
       if (res.data.success) {

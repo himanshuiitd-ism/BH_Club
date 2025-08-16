@@ -11,13 +11,11 @@ const useGetRTCM = () => {
     if (!socket) return;
 
     const handleNewCommunityMessage = (newMessage) => {
-      console.log("New community message received:", newMessage);
       // FIXED: Properly dispatch the action with the new messages array
       dispatch(setCommunityMessages([...communityMessages, newMessage]));
     };
 
     const handleCommunityMessageDeleted = (deletedMessageId) => {
-      console.log("Community message deleted:", deletedMessageId);
       const filteredMessages = communityMessages.filter(
         (msg) => msg._id !== deletedMessageId
       );
@@ -25,7 +23,6 @@ const useGetRTCM = () => {
     };
 
     const handleCommunityMessageUpdated = (updatedMessage) => {
-      console.log("Community message updated:", updatedMessage);
       const updatedMessages = communityMessages.map((msg) =>
         msg._id === updatedMessage._id ? updatedMessage : msg
       );

@@ -19,7 +19,7 @@ const useGetAllCommMsg = () => {
         console.log("Fetching messages for community:", selectedCommunity._id);
 
         const res = await axios.get(
-          `http://localhost:8001/api/v1/communities/${selectedCommunity._id}/messages`,
+          `https://bh-club.onrender.com/api/v1/communities/${selectedCommunity._id}/messages`,
           { withCredentials: true }
         );
 

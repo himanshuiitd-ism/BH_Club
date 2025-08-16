@@ -38,9 +38,12 @@ const ChatPage = () => {
 
       try {
         const userDetailsPromise = user.following.map((userId) =>
-          axios.get(`http://localhost:8001/api/v1/user/${userId}/profile`, {
-            withCredentials: true,
-          })
+          axios.get(
+            `https://bh-club.onrender.com/api/v1/user/${userId}/profile`,
+            {
+              withCredentials: true,
+            }
+          )
         );
 
         // Use allSettled to handle individual failures gracefully
@@ -79,7 +82,7 @@ const ChatPage = () => {
           chatableUser.map(async (userData) => {
             try {
               const messageResponse = await axios.get(
-                `http://localhost:8001/api/v1/message/all/${userData._id}`,
+                `https://bh-club.onrender.com/api/v1/message/all/${userData._id}`,
                 { withCredentials: true }
               ); //isme bahut kuch aaega usme se messages array nikalna hai
               const messages =
@@ -150,7 +153,7 @@ const ChatPage = () => {
   const sendMsgHandler = async (receiverId) => {
     try {
       const res = await axios.post(
-        `http://localhost:8001/api/v1/message/send/${receiverId}`,
+        `https://bh-club.onrender.com/api/v1/message/send/${receiverId}`,
         { textMsg },
         {
           headers: {

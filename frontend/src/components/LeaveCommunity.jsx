@@ -22,7 +22,7 @@ const LeaveCommunity = ({ setLeaveCommunity, setMoreOptions }) => {
     try {
       setLoading(true);
       const res = await axios.patch(
-        `http://localhost:8001/api/v1/communities/${selectedCommunity?._id}/leave`,
+        `https://bh-club.onrender.com/api/v1/communities/${selectedCommunity?._id}/leave`,
         {},
         { withCredentials: true }
       );

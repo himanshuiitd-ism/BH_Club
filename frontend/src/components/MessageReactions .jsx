@@ -54,7 +54,7 @@ const MessageReactions = ({ message, onReactionUpdate, isOwnMessage }) => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8001/api/v1/communities/${message._id}/like`,
+        `https://bh-club.onrender.com/api/v1/communities/${message._id}/like`,
         { emoji },
         { withCredentials: true }
       );

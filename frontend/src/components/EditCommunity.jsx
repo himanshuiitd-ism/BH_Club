@@ -39,7 +39,7 @@ const EditCommunity = ({ setEditProfile }) => {
     if (selectedFile) formData.append("newPhoto", selectedFile);
     try {
       const res = await axios.post(
-        `http://localhost:8001/api/v1/communities/${selectedCommunity._id}/editCommunity`,
+        `https://bh-club.onrender.com/api/v1/communities/${selectedCommunity._id}/editCommunity`,
         formData,
         {
           headers: {
